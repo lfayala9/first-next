@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import close from '@icons/icon_close.png'
 import AppContext from "../context/AppContext";
+import Image from "next/image";
 import style from '@styles/OrderItem.module.scss'
 
 
@@ -19,9 +20,9 @@ const OrderItem = ({product, ids}) => {
           alt="bike"
         />
       </figure>
-      <p>{product.title}</p>
-      <p>${product.price}</p>
-      <img className="close" src={close}alt="close" onClick={()=>handleRemove(ids)}/>
+      <p>{product?.title}</p>
+      <p>${product?.price}</p>
+      <Image className="close" src={close}alt="close" onClick={()=>handleRemove(ids)}/>
     </div>
   );
 };

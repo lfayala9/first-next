@@ -9,7 +9,7 @@ const API = "https://fakestoreapi.com/products?offset=20&limit=12";
 const ProductList = () => {
   const products = useGetItems(API);
   return (
-    <section className="main-container">
+    <section className={style["main-container"]}>
       <div className={style.ProductList}>
         
         {products.map((product) => (

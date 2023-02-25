@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
+import Image from "next/image";
 import Menu from "./Menu";
-import "../styles/Header.scss";
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import shoppingCart from '@icons/icon_shopping_cart.svg';
-import MyOrders from '../containers/MyOrders'
-import AppContext from "../context/AppContext";
+import MyOrders from '@containers/MyOrders'
+import AppContext from "@context/AppContext";
 import style from '@styles/Header.module.scss'
 
 const Header = () => {
@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <nav className={style.Nav}>
-      <img src={menu} alt="menu" className="menu" />
-      <div className="navbar-left">
-        <img src={logo} alt="logo" className="nav-logo" />
+      <Image src={menu} alt="menu" className={style.menu} />
+      <div className={style["navbar-left"]}>
+        <Image src={logo} alt="logo" className={style["nav-logo"]} />
         <ul>
           <li>
             <a href="/">All</a>
@@ -42,11 +42,11 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-right">
+      <div className={style["navbar-right"]}>
         <ul>
-          <li onClick={handleToggle} className="navbar-email">Luis</li>
-          <li onClick={()=>setToggleOrders(!toggleOrders)} className="navbar-shopping-cart">
-            <img src={shoppingCart} alt="shopping cart" />
+          <li onClick={handleToggle} className={style["navbar-email"]}>Luis</li>
+          <li onClick={()=>setToggleOrders(!toggleOrders)} className={style["navbar-shopping-cart"]}>
+            <Image src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div>: null}
           </li>
         </ul>

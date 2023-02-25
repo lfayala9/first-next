@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Tooltip } from "react-tooltip";
+import Image from "next/image";
 import cartIcon from "@icons/bt_add_to_cart.svg";
-import AppContext from "../context/AppContext";
+import AppContext from "@context/AppContext";
 import style from '@styles/Product.module.scss'
 
 
@@ -28,13 +29,13 @@ const Product = ({ product }) => {
           Bla bla bla bla bla bla
         </Tooltip>
         {/* {toggle && <ProductDetail/>} */}
-        <div className="product-info">
+        <div className={style["product-info"]}>
           <div>
             <p>{product.title}</p>
             <p>${product.price}</p>
           </div>
           <figure onClick={() => handleClick(product)}>
-            <img src={cartIcon} alt="" />
+            <Image src={cartIcon} alt="" />
           </figure>
         </div>
       </div>

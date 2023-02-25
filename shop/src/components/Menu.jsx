@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Menu.scss"
 import style from '@styles/Menu.module.scss'
 
 

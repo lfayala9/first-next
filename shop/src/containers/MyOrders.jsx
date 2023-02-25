@@ -1,5 +1,7 @@
 import React, {useContext, useState} from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
+// import { Link } from 'react-router-dom';
+import Image from 'next/image';
 import OrderItem from '../components/OrderItem';
 import flecha from '@icons/flechita.svg'
 import AppContext from '../context/AppContext'
@@ -14,28 +16,30 @@ const MyOrders = ({ toggleOrders, setToggleOrders }) => {
 		<aside className={style.MyOrder}>
 			<div 
 			onClick={()=>setToggleOrders(!toggleOrders)}
-			className="title-container" >
-				<img 
+			className={style["title-container"]} >
+				<Image 
 				src={flecha} alt="arrow" />
 				<p className="title">My order</p>
 			</div>
-			<div className="section-scroll">
+			<div className={style["section-scroll"]}>
 				{cart.map((product, ids)=>(
 					<OrderItem product={product} key={`orderItem-${product.id}-${ids}`} ids={ids} />
 				))}
 				
-				<div className="order">
+				<div className={style.order}>
 					<p>
 						<span>Total</span>
 					</p>
 					<p>${sumTotal(cart)}</p>
 				</div>
 				<link rel="stylesheet" href="" />
-				<Link to='/checkout'>
-					<button className="primary-button">
-						Checkout
-					</button>
-				</Link>
+				{/* <Link to='/checkout'> */}
+					<Link href='/checkout'>
+						<button className={style["primary-button"]}>
+							Checkout
+						</button>
+					</Link>
+				{/* </Link>  */}
 			</div>
 			{/* {toggle && <MyOrder setToggle={setToggle}/>} */}
 		</aside>

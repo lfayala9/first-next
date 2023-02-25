@@ -23,7 +23,7 @@ const MyOrder = () => {
           {cart.map((product, index) => (
             <OrderItem indexValue={index} product={product} key={index} />
           ))}
-          <div className={styleorder}>
+          <div className={style.order}>
             <p className={style["order__info"]}>
               <span className={style["order__date"]}>
                 {date.getDate()}.{date.getMonth()}.{date.getFullYear()}
