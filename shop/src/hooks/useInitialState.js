@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const initialState = {
   cart: [],
-  total: 0
+  total: 0,
 };
 
 const useInitialState = () => {
@@ -17,15 +17,14 @@ const useInitialState = () => {
   };
 
   const removeFromCart = (ids) => {
-    const removedElement = state.cart.splice(ids, 1)[0]
-  
+    const removedElement = state.cart.splice(ids, 1)[0];
+
     setState({
       ...state,
       cart: state.cart,
-      totalPrice: state.totalPrice - removedElement.price
+      totalPrice: state.totalPrice - removedElement.price,
     });
   };
-  
 
   return {
     state,
