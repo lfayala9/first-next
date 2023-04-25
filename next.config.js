@@ -9,15 +9,15 @@ const nextConfig = {
   },
   // basePath: '/dist',
   compress: true,
-  async redirects(){
-    return[
+  async redirects() {
+    return [
       {
         source: '/hola',
         destination: 'https://github.com/lfayala9',
-        permanent: true
-      }
-    ]
-  }
-}
+        permanent: true,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
