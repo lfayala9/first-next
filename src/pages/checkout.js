@@ -1,4 +1,4 @@
-import Head from 'next/head';
+// import Head from 'next/head';
 import React, { useContext } from 'react';
 import OrderItem from '../components/OrderItem';
 import Image from 'next/image';
@@ -15,9 +15,9 @@ const MyOrder = () => {
   const date = new Date();
   return (
     <>
-      <Head>
+      <div>
         <title>Checkout</title>
-      </Head>
+      </div>
       <div className={style.Checkout}>
         <div className={style['Checkout-container']}>
           <div className={style['title-container']}>
